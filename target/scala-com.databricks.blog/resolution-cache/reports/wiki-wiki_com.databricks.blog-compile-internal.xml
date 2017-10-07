@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="wiki"
+		module="wiki_com.databricks.blog"
+		revision="1.0"
+		conf="compile-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20171007170401"/>
+	<dependencies>
+		<module organisation="org.apache.spark" name="spark-sql_com.databricks.blog">
+			<revision name="2.0.0" error="not found" downloaded="false" searched="false" conf="default(compile)" position="-1">
+				<caller organisation="wiki" name="wiki_com.databricks.blog" conf="compile-internal, compile, provided, optional" rev="2.0.0" rev-constraint-default="2.0.0" rev-constraint-dynamic="2.0.0" callerrev="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.spark" name="spark-core_com.databricks.blog">
+			<revision name="2.0.0" error="not found" downloaded="false" searched="false" conf="default(compile)" position="-1">
+				<caller organisation="wiki" name="wiki_com.databricks.blog" conf="compile-internal, compile, provided, optional" rev="2.0.0" rev-constraint-default="2.0.0" rev-constraint-dynamic="2.0.0" callerrev="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="com.databricks.blog" error="not found" downloaded="false" searched="false" conf="default(compile)" position="-1">
+				<caller organisation="wiki" name="wiki_com.databricks.blog" conf="compile-internal, compile, provided, optional" rev="com.databricks.blog" rev-constraint-default="com.databricks.blog" rev-constraint-dynamic="com.databricks.blog" callerrev="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

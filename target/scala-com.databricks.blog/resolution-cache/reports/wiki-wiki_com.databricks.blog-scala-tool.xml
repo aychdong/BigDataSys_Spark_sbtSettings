@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="wiki"
+		module="wiki_com.databricks.blog"
+		revision="1.0"
+		conf="scala-tool"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20171007170401"/>
+	<dependencies>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="com.databricks.blog" error="not found" downloaded="false" searched="false" conf="default, optional(default)" position="-1">
+				<caller organisation="wiki" name="wiki_com.databricks.blog" conf="scala-tool" rev="com.databricks.blog" rev-constraint-default="com.databricks.blog" rev-constraint-dynamic="com.databricks.blog" callerrev="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-compiler">
+			<revision name="com.databricks.blog" error="not found" downloaded="false" searched="false" conf="default, optional(default)" position="-1">
+				<caller organisation="wiki" name="wiki_com.databricks.blog" conf="scala-tool" rev="com.databricks.blog" rev-constraint-default="com.databricks.blog" rev-constraint-dynamic="com.databricks.blog" callerrev="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
