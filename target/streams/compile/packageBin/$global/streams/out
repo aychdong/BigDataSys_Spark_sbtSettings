@@ -1,7 +1,27 @@
-[0m[[0m[0minfo[0m] [0m[0mPackaging /users/dongchen/project/target/scala-2.11/wiki_2.11-1.0.jar ...[0m
+[0m[[0m[0minfo[0m] [0m[0mPackaging /users/dongchen/sbtSettings/target/scala-2.11/wiki_2.11-1.0.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	wiki.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/project/target/scala-2.11/classes/wiki.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$typecreator1$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	wiki$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/project/target/scala-2.11/classes/wiki$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wiki.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /users/dongchen/sbtSettings/target/scala-2.11/classes/wiki.class[0m
 [0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
