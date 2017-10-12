@@ -10,10 +10,10 @@ def main(args: Array[String]): Unit={
 val spark_master_url = "spark://c220g1-030627.wisc.cloudlab.us:7077"
 val username = "dongchen"
 
-val config = new SparkConf().setAppName("wiki").setMaster(spark_master_url)
+val config = new SparkConf().setAppName("wiki").setMaster("local[4]")
 val sc = new SparkContext(config)
 val sqlContext = new SQLContext(sc)
-val df = sqlContext.read.format("com.databricks.spark.xml").option("rowTag", "page").load("/enwiki-20110115-pages-articles_whole.xml")
+val df = sqlContext.read.format("com.databricks.spark.xml").option("rowTag", "page").load("file:///users/dongchen/enwiki-20110115-pages-articles1.xml")
 val title_text_tmp = df.select("title", "revision.text._VALUE")
 val title_text = title_text_tmp.filter("_VALUE is not null")
 val pattern = """\[\[(.*?)\]\]""".r
@@ -22,7 +22,7 @@ val tmp = title_text.withColumn("newText", convert(title_text("_VALUE")))
 val new_title_text = tmp.select("title", "newText")
 val exploded = new_title_text.withColumn("newClo", explode(col("newText")))
 val final_res = exploded.select("title", "newClo")
-final_res.write.format("com.databricks.spark.csv").option("header", "false").option("delimiter","\t").mode("overwrite").save("/sb_whole.csv")
+final_res.write.format("com.databricks.spark.csv").option("header", "false").option("delimiter","\t").mode("overwrite").save("file:///users/dongchen/sb_1.csv")
 }
 }
 
