@@ -14,32 +14,34 @@ import scala.concurrent.duration._
 
 object wiki{
 def main(args: Array[String]): Unit={
-	//val spark_master_url = "spark://c220g1-030627.wisc.cloudlab.us:7077"
-	val username = "dongchen"
+    //receiver
+    val spark = SparkSession
+        .builder
+        .appName("StructuredStreamingReceiver")
+        .getOrCreate()
 
-	val config = new SparkConf().setAppName("pageRank").setMaster("local[4]")
-	val sc = new SparkContext(config)
+    import spark.implicits._
 
-	val file = sc.textFile("file:///users/dongchen/sb_1.csv")
-    val links = file.filter{tmp => tmp.contains("\t") && (tmp.split("\t").length > 1)}.map{ s =>
-        val parts = s.split("\t")
-        (parts(0), parts(1))
-    }.distinct().groupByKey().cache()
-    var ranks = links.mapValues(v => 1.0)
+    val lines = spark.readStream
+        .format("text")
+       .load("file:///users/dongchen/socket")
 
-    for (i <- 1 to 10) {
-      val contribs = links.join(ranks).values.flatMap{ case (urls, rank) =>
-        val size = urls.size
-        urls.map(url => (url, rank / size))
-      }
-      ranks = contribs.reduceByKey(_ + _).mapValues(0.15 + 0.85 * _)
-    }
+    val convert1 = udf((x: String) => x.substring(1, (x.lastIndexOf(","))))
+    val convert2 = udf((x: String) => x.substring((x.lastIndexOf(",")+1), (x.length-1)))
 
-    val output = ranks.collect()
-/*
-    val pw = new PrintWriter(new File("~/pageRank.txt"))
-    output.foreach(tup => pw.write(tup._1 + "\t" + tup._2 + "\n"))
-*/
-ranks.saveAsTextFile("file:///users/dongchen/pageRank.txt")
+    val lines1 = lines.withColumn("split0", convert1(lines("value")))
+    val lines2 = lines1.withColumn("split1", convert2(lines("value")))
+   val new_lines = lines2.select("split0", "split1")
+    val newnew_lines = new_lines.filter($"split1" > "0.5")
+
+    val query = newnew_lines.writeStream
+        .format("csv")
+        .option("delimiter","\t")
+        .option("checkpointLocation", "hdfs://c220g2-011316.wisc.cloudlab.us:8020/checkpoint")
+        .option("path", "file:///users/dongchen/receive_res")
+        .start()
+
+    query.awaitTermination()
+
 }
 }
